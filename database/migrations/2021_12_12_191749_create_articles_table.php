@@ -19,9 +19,10 @@ class CreateArticlesTable extends Migration
             $table->string('title', 100);
             $table->string('sub_title', 255);
             $table->text('description');
-            $table->string('slug', 100);
+            $table->string('slug', 100)->nullable();
             $table->boolean('is_active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

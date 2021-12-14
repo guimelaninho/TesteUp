@@ -14,9 +14,10 @@ class CreateAuthorsTable extends Migration
     public function up()
     {
         Schema::create('authors', function (Blueprint $table) {
-            $table->uuid('id',36)->primary();
-            $table->string('name',255);
+            $table->uuid('id', 36)->primary();
+            $table->string('name', 255);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
